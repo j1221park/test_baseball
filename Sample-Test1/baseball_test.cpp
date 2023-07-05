@@ -1,6 +1,6 @@
 #include "pch.h"
+#include "../baseball/baseball.cpp"
 
-TEST(TestCaseName, TestName) {
+TEST(BaseballGame, TryGameTest) {
   EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
 }
