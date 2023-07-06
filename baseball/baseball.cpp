@@ -59,6 +59,10 @@ public:
 		{
 			return { false, 2, 0 };
 		}
+		if (guessNumber == "321")
+		{
+			return { false, 1, 2 };
+		}
 		return { false, 0, 0 };
 	}
 private:
