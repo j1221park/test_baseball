@@ -49,6 +49,13 @@ public:
 			|| (guessNumber[1] == question[1] && guessNumber[2] == question[2]);
 	}
 
+	bool is1Strike2Balls(const string& guessNumber)
+	{
+		return (guessNumber[0] == question[0] && guessNumber[1] == question[2] && guessNumber[2] == question[1])
+			|| (guessNumber[1] == question[1] && guessNumber[0] == question[2] && guessNumber[2] == question[0])
+			|| (guessNumber[2] == question[2] && guessNumber[1] == question[0] && guessNumber[0] == question[1]);
+	}
+
 	GuessResult guess(const string& guessNumber)
 	{
 		assertIllegalArgument(guessNumber);
@@ -59,7 +66,7 @@ public:
 		{
 			return { false, 2, 0 };
 		}
-		if (guessNumber == "321")
+		if (is1Strike2Balls(guessNumber))
 		{
 			return { false, 1, 2 };
 		}
